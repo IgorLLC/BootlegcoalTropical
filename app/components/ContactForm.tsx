@@ -2,15 +2,33 @@
 
 import { useState } from 'react';
 
+interface StatusInfo {
+  error: boolean;
+  msg: string | null;
+}
+
+interface FormStatus {
+  submitted: boolean;
+  submitting: boolean;
+  info: StatusInfo;
+}
+
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     subject: '',
     message: '',
   });
 
-  const [status, setStatus] = useState({
+  const [status, setStatus] = useState<FormStatus>({
     submitted: false,
     submitting: false,
     info: { error: false, msg: null },
