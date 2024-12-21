@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { Post } from '../types/blog';
+import { BlogPost } from '../types/blog';
 
 interface LatestArticlesProps {
-  articles: Post[];
+  articles: BlogPost[];
 }
 
 export default function LatestArticles({ articles }: LatestArticlesProps) {
@@ -12,14 +12,18 @@ export default function LatestArticles({ articles }: LatestArticlesProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {articles.slice(0, 5).map((article) => (
           <article key={article.slug} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
-            {article.coverImage && (
+            {article.image && (
               <img
-                src={article.coverImage}
+                src={article.image}
                 alt={article.title}
                 className="w-full h-48 object-cover"
               />
             )}
             <div className="p-6">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm text-gray-500">{article.category}</span>
+                <span className="text-sm text-gray-500">{article.readTime}</span>
+              </div>
               <h3 className="text-xl font-semibold mb-2 text-gray-900">
                 <Link href={`/blog/posts/${article.slug}`} className="hover:text-blue-600">
                   {article.title}
