@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 interface StatusInfo {
   error: boolean;
-  msg: string | null;
+  msg: string;
 }
 
 interface FormStatus {
@@ -31,7 +31,7 @@ export default function ContactForm() {
   const [status, setStatus] = useState<FormStatus>({
     submitted: false,
     submitting: false,
-    info: { error: false, msg: null },
+    info: { error: false, msg: '' },
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
