@@ -2,15 +2,21 @@
 
 import { useState } from 'react';
 
-interface StatusInfo {
-  error: boolean;
-  msg: string | null;
-}
+type FormMessage = {
+  type: 'success';
+  content: string;
+} | {
+  type: 'error';
+  content: string;
+} | {
+  type: 'none';
+  content: null;
+};
 
 interface FormStatus {
   submitted: boolean;
   submitting: boolean;
-  info: StatusInfo;
+  message: FormMessage;
 }
 
 interface FormData {
@@ -30,7 +36,7 @@ const INITIAL_FORM_DATA: FormData = {
 const INITIAL_STATUS: FormStatus = {
   submitted: false,
   submitting: false,
-  info: { error: false, msg: null },
+  message: { type: 'none', content: null },
 };
 
 const SUCCESS_MESSAGE = 'Message sent successfully!';
@@ -57,14 +63,14 @@ export default function ContactForm() {
       setStatus({
         submitted: true,
         submitting: false,
-        info: { error: false, msg: SUCCESS_MESSAGE },
+        message: { type: 'success', content: SUCCESS_MESSAGE },
       });
       setFormData(INITIAL_FORM_DATA);
     } catch (error) {
       setStatus({
         submitted: false,
         submitting: false,
-        info: { error: true, msg: ERROR_MESSAGE },
+        message: { type: 'error', content: ERROR_MESSAGE },
       });
     }
   };
@@ -142,13 +148,13 @@ export default function ContactForm() {
         </button>
       </div>
 
-      {status.info.msg && (
+      {status.message.type !== 'none' && (
         <div
           className={`mt-4 p-4 rounded-md ${
-            status.info.error ? 'bg-red-50 text-red-700' : 'bg-green-50 text-green-700'
+            status.message.type === 'error' ? 'bg-red-50 text-red-700' : 'bg-green-50 text-green-700'
           }`}
         >
-          {status.info.msg}
+          {status.message.content}
         </div>
       )}
     </form>
