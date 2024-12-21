@@ -2,9 +2,11 @@
 
 import { useState } from 'react';
 
+type FormMessage = string;
+
 interface StatusInfo {
   error: boolean;
-  msg: string;
+  msg: FormMessage;
 }
 
 interface FormStatus {
@@ -20,19 +22,22 @@ interface FormData {
   message: string;
 }
 
-export default function ContactForm() {
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
+const INITIAL_FORM_DATA: FormData = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+};
 
-  const [status, setStatus] = useState<FormStatus>({
-    submitted: false,
-    submitting: false,
-    info: { error: false, msg: '' },
-  });
+const INITIAL_STATUS: FormStatus = {
+  submitted: false,
+  submitting: false,
+  info: { error: false, msg: '' },
+};
+
+export default function ContactForm() {
+  const [formData, setFormData] = useState<FormData>(INITIAL_FORM_DATA);
+  const [status, setStatus] = useState<FormStatus>(INITIAL_STATUS);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -46,8 +51,6 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
 
-    // Here you would typically send the form data to your backend
-    // For now, we'll simulate a successful submission
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500)); // Simulate API call
       setStatus({
@@ -55,12 +58,7 @@ export default function ContactForm() {
         submitting: false,
         info: { error: false, msg: 'Message sent successfully!' },
       });
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
+      setFormData(INITIAL_FORM_DATA);
     } catch (error) {
       setStatus({
         submitted: false,
