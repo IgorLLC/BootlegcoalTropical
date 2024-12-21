@@ -1,6 +1,5 @@
-'use client';
-
 import Link from 'next/link';
+import ShareButtons from '../../components/ShareButtons';
 
 interface BlogPost {
   title: string;
@@ -92,38 +91,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
         <footer className="mt-12 pt-8 border-t border-gray-200">
           <h2 className="text-2xl font-semibold mb-4">Share this post</h2>
-          <div className="flex space-x-4">
-            <a
-              href="#"
-              className="text-blue-600 hover:text-blue-800"
-              onClick={(e) => {
-                e.preventDefault();
-                // Add social sharing functionality
-              }}
-            >
-              Twitter
-            </a>
-            <a
-              href="#"
-              className="text-blue-600 hover:text-blue-800"
-              onClick={(e) => {
-                e.preventDefault();
-                // Add social sharing functionality
-              }}
-            >
-              Facebook
-            </a>
-            <a
-              href="#"
-              className="text-blue-600 hover:text-blue-800"
-              onClick={(e) => {
-                e.preventDefault();
-                // Add social sharing functionality
-              }}
-            >
-              LinkedIn
-            </a>
-          </div>
+          <ShareButtons title={post.title} />
         </footer>
       </article>
     </main>
