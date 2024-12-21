@@ -73,29 +73,14 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2">
               <li>
-                <Link href="/contact" className="hover:text-white">
-                  Get in Touch
-                </Link>
-              </li>
-              <li>
-                <Link href="/buy" className="hover:text-white">
-                  Purchase Book
-                </Link>
-              </li>
-              <li>
-                <a href="mailto:info@bootlegcoal.com" className="hover:text-white">
+                <a href="mailto:info@bootlegcoal.com" className="text-gray-400 hover:text-white">
                   info@bootlegcoal.com
                 </a>
               </li>
               <li>
-                <a href="tel:+1234567890" className="hover:text-white">
-                  (123) 456-7890
-                </a>
-              </li>
-              <li>
-                <address className="not-italic">
+                <address className="text-gray-400 not-italic">
                   Pennsylvania, USA
                 </address>
               </li>
