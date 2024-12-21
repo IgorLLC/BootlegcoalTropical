@@ -247,5 +247,131 @@ If you'd like to contribute, please fork the repository and make changes as you'
 ## License
 All rights reserved. This project is licensed under the terms that can be found in the LICENSE file.
 
+## Image Directory Structure
+```
+public/
+└── images/
+    ├── book-cover.jpg              # Main book cover image (1200x1600px)
+    ├── author/
+    │   ├── mitch-troutman.png      # Author profile photo (800x800px)
+    │   └── author-speaking.jpg     # Author at events (1200x800px)
+    ├── blog/
+    │   └── articles/
+    │       ├── out-of-state/
+    │       │   └── mining-machinery.jpg        # Maquinaria minera (1200x800px)
+    │       ├── headlines/
+    │       │   ├── pine-knot-mine.jpg         # "Stripping at Pine Knot Mine" titular
+    │       │   └── prison-cells.jpg           # "More Men Than Cells" titular
+    │       ├── coal-navy/
+    │       │   └── bridge-flag.jpg            # Puente con bandera americana
+    │       ├── prohibition/
+    │       │   └── kaiers-sign.jpg            # Anuncio vintage de Kaier's
+    │       ├── thank-you/
+    │       │   ├── events-collage-1.jpg       # Collage de eventos superior
+    │       │   └── events-collage-2.jpg       # Collage de eventos inferior
+    │       ├── rebellion/
+    │       │   └── explosion.jpg              # Imagen de explosión
+    │       ├── portraits/
+    │       │   └── miner-portrait.jpg         # Retrato B/N de minero
+    │       ├── homestead/
+    │       │   └── qa-video-thumb.jpg         # Thumbnail del video Q&A
+    │       ├── book-excerpt/
+    │       │   └── book-cover-3d.png          # Portada 3D del libro
+    │       ├── dynamite/
+    │       │   └── dynamite-box.jpg           # Caja de dinamita histórica
+    │       ├── munitions/
+    │       │   └── industrial-conflict.jpg     # Foto histórica de conflicto
+    │       └── equalization/
+    │           └── crowd-gathering.jpg        # Foto histórica de multitud
+    ├── events/
+    │   └── no9-mine.jpg           # No. 9 Mine Museum (1600x900px)
+    └── historical/
+        ├── mine-entrance.jpg       # Historical mine entrance (1200x800px)
+        ├── miners-group.jpg        # Historical miners photo (1200x800px)
+        └── coal-operation.jpg      # Historical operations (1200x800px)
+```
+
+## Image Guidelines
+- **Formats**:
+  - Photos: JPG format
+  - Author images: PNG format (for better quality)
+  - Icons and logos: SVG format
+- **Sizes**:
+  - Blog images: 1200x800px
+  - Event images: 1600x900px
+  - Author photos: 800x800px
+  - Historical photos: 1200x800px
+- **Optimization**:
+  - Maximum file size: 200KB
+  - Use WebP format with JPG fallback when possible
+  - Compress images for web use
+
+## Technical Details
+
+### Dependencies
+Current stable versions used in the project:
+
+```json
+{
+  "dependencies": {
+    "next": "13.5.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "gray-matter": "^4.0.3",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.2",
+    "@types/react": "^18.2.25",
+    "@types/react-dom": "^18.2.10",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2"
+  }
+}
+```
+
+### Recent Updates and Changes
+
+#### Version Updates (December 2023)
+- Updated book cover image to high-quality 3D render version
+- Enhanced author page with improved layout and contact information
+- Added new blog article "Headlines Tell the Story"
+- Improved image optimization and loading performance
+- Enhanced mobile responsiveness across all pages
+
+## 🔄 Latest Changes
+- Added new 3D book cover image (cover3d_noshadow.png)
+- Updated homepage layout to showcase new book cover
+- Enhanced blog article structure and navigation
+- Improved author page with better biography section
+
+### Development Setup
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/bootlegcoal-website.git
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Run the development server:
+```bash
+npm run dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Contributing
+If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
+
+## License
+All rights reserved. This project is licensed under the terms that can be found in the LICENSE file.
+
 ## Contact
 For any questions or concerns, please open an issue in the repository.

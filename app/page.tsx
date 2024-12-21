@@ -16,7 +16,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <div className="md:w-1/2">
               <img
-                src="/book-cover.jpg"
+                src="/images/cover3d_noshadow.png"
                 alt="Bootleg Coal and the Law book cover"
                 className="w-full rounded-lg shadow-lg"
               />
