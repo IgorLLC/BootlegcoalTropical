@@ -8,9 +8,9 @@ export default function AuthorPage() {
           {/* Author Image Column */}
           <div>
             <img
-              src="/author.jpg"
+              src="/images/author/mitch-troutman.png"
               alt="Mitch Troutman"
-              className="w-full rounded-lg shadow-lg mb-4"
+              className="h-48 w-full object-cover md:w-48 rounded-lg shadow-lg mb-4"
             />
             <div className="bg-white p-4 rounded-lg shadow-md">
               <h2 className="text-xl font-semibold mb-2">Connect</h2>
