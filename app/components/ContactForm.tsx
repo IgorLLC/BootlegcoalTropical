@@ -2,11 +2,9 @@
 
 import { useState } from 'react';
 
-type FormMessage = string;
-
 interface StatusInfo {
   error: boolean;
-  msg: FormMessage;
+  msg: string | null;
 }
 
 interface FormStatus {
@@ -32,8 +30,11 @@ const INITIAL_FORM_DATA: FormData = {
 const INITIAL_STATUS: FormStatus = {
   submitted: false,
   submitting: false,
-  info: { error: false, msg: '' },
+  info: { error: false, msg: null },
 };
+
+const SUCCESS_MESSAGE = 'Message sent successfully!';
+const ERROR_MESSAGE = 'An error occurred. Please try again later.';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>(INITIAL_FORM_DATA);
@@ -52,18 +53,18 @@ export default function ContactForm() {
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500)); // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1500));
       setStatus({
         submitted: true,
         submitting: false,
-        info: { error: false, msg: 'Message sent successfully!' },
+        info: { error: false, msg: SUCCESS_MESSAGE },
       });
       setFormData(INITIAL_FORM_DATA);
     } catch (error) {
       setStatus({
         submitted: false,
         submitting: false,
-        info: { error: true, msg: 'An error occurred. Please try again later.' },
+        info: { error: true, msg: ERROR_MESSAGE },
       });
     }
   };
