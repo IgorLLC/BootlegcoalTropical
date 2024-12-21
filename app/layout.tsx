@@ -1,13 +1,13 @@
-import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Navbar from './components/Navbar';
+import './globals.css';
+import Layout from './components/Layout';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Bootleg Coal',
-  description: 'The history of bootleg coal mining in Pennsylvania',
+  title: 'The Bootleg Coal Rebellion',
+  description: 'Exploring the untold stories of Pennsylvania\'s bootleg coal miners and their fight for justice during the Great Depression.',
 };
 
 export default function RootLayout({
@@ -18,8 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        {children}
+        <Layout>
+          {children}
+        </Layout>
       </body>
     </html>
   );

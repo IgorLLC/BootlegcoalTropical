@@ -146,3 +146,106 @@ Contributions are welcome! Please read our contributing guidelines before submit
 ## 📄 License
 
 This project is licensed under the ISC License.
+
+## Recent Updates
+
+### Buy Page Redesign (December 2021)
+- Complete redesign of the Buy page with a modern, minimalist approach
+- Implemented a monochromatic color scheme (black and white)
+- Enhanced user interface with improved navigation and visual hierarchy
+- Added responsive card layouts for better mobile experience
+
+#### Key Features Added:
+1. **Navigation System**
+   - Sticky navigation menu with smooth scrolling
+   - Clear section separators
+   - Improved hover effects and transitions
+
+2. **Online Retailers Section**
+   - Redesigned cards for PM Press, Bookshop.org, and Amazon
+   - Added social media integration for PM Press (Instagram and Facebook)
+   - Improved call-to-action buttons
+
+3. **Local Stores Section**
+   - Organized stores into two categories: Coal Region & Nearby and Further Away
+   - Interactive store cards with hover effects
+   - Click-to-call functionality for phone numbers
+   - Clear location information
+
+4. **Libraries Section**
+   - Added WorldCat integration
+   - Improved information about library requests
+   - Better visual organization of library resources
+
+5. **Wholesale Section**
+   - Clear pricing information for bulk orders
+   - Improved distributor information
+   - Regional specific information
+
+6. **Signed Copies Section**
+   - Integration with events calendar
+   - Clear call-to-action for upcoming events
+
+### Design Improvements
+- **Typography**
+  - Consistent heading hierarchy
+  - Improved readability with appropriate font sizes
+  - Better text contrast
+
+- **Layout**
+  - Responsive grid system
+  - Improved spacing and alignment
+  - Better visual hierarchy
+
+- **Interactive Elements**
+  - Enhanced hover states
+  - Smooth transitions
+  - Better button and link visibility
+
+- **Accessibility**
+  - Added ARIA labels for social media links
+  - Improved color contrast
+  - Better semantic HTML structure
+
+### Technical Improvements
+- Implemented Next.js best practices
+- Enhanced responsive design
+- Improved performance optimization
+- Better code organization
+- Added TypeScript support
+
+## Setup Instructions
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/bootlegcoal-website.git
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Run the development server:
+```bash
+npm run dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Technologies Used
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- ESLint
+- Prettier
+
+## Contributing
+If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
+
+## License
+All rights reserved. This project is licensed under the terms that can be found in the LICENSE file.
+
+## Contact
+For any questions or concerns, please open an issue in the repository.
