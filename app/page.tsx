@@ -1,4 +1,9 @@
+import { getAllPosts } from './blog/data/posts';
+import LatestArticles from './components/LatestArticles';
+
 export default function Home() {
+  const posts = getAllPosts();
+
   return (
     <main className="flex min-h-screen flex-col items-center p-8 bg-gray-50">
       <div className="max-w-4xl w-full">
@@ -48,6 +53,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Latest Articles Section */}
+        <LatestArticles articles={posts} />
 
         {/* Additional Info */}
         <section className="bg-white rounded-lg shadow-md p-8">
