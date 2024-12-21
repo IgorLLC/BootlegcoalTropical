@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 interface BlogPost {
@@ -37,6 +39,12 @@ const posts: Record<string, BlogPost> = {
     image: "/blog/rebellion.jpg"
   }
 };
+
+export async function generateStaticParams() {
+  return Object.keys(posts).map((slug) => ({
+    slug,
+  }));
+}
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
   const post = posts[params.slug];
