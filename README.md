@@ -338,6 +338,16 @@ Current stable versions used in the project:
 #### Version Updates (December 2023)
 - Updated book cover image to high-quality 3D render version
 - Enhanced author page with improved layout and contact information
+- Fixed mobile navigation issues:
+  - Made mobile navbar fixed at the top for better accessibility
+  - Eliminated navbar duplication on mobile views
+  - Improved mobile menu with full-screen overlay
+  - Added automatic menu closing when selecting a link
+  - Maintained desktop left sidebar while optimizing mobile view
+
+#### Version Updates (December 2023)
+- Updated book cover image to high-quality 3D render version
+- Enhanced author page with improved layout and contact information
 - Added new blog article "Headlines Tell the Story"
 - Improved image optimization and loading performance
 - Enhanced mobile responsiveness across all pages

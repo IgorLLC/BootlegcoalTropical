@@ -1,97 +1,93 @@
+import PageLayout from '../components/PageLayout';
+
 export default function AuthorPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-8 bg-gray-50">
-      <div className="max-w-4xl w-full">
-        <h1 className="text-4xl font-bold mb-8">About the Author</h1>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Author Image Column */}
-          <div>
+    <PageLayout>
+      <div className="space-y-12">
+        {/* Author Hero Section */}
+        <section className="flex flex-col md:flex-row gap-8 items-start">
+          <div className="md:w-1/3">
             <img
               src="/images/author/mitch-troutman.png"
               alt="Mitch Troutman"
-              className="h-48 w-full object-cover md:w-48 rounded-lg shadow-lg mb-4"
+              className="w-full rounded-lg shadow-lg"
             />
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <h2 className="text-xl font-semibold mb-2">Connect</h2>
-              <div className="space-y-2">
-                <a
-                  href="mailto:mitchell.troutman@gmail.com"
-                  className="block text-blue-600 hover:text-blue-800"
-                >
-                  mitchell.troutman@gmail.com
-                </a>
-                <a
-                  href="https://twitter.com/mitchtroutman"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-blue-600 hover:text-blue-800"
-                >
-                  @mitchtroutman
-                </a>
-              </div>
+          </div>
+          <div className="md:w-2/3">
+            <h1 className="text-4xl font-bold mb-4">Mitch Troutman</h1>
+            <p className="text-xl text-gray-700 mb-6">
+              Writer, Educator, and Labor Historian
+            </p>
+            <div className="prose prose-lg">
+              <p>
+                Mitch Troutman is a writer, educator, and organizer. His work focuses on labor history 
+                and environmental justice in Pennsylvania's coal region.
+              </p>
+              <p>
+                Through extensive research and compelling storytelling, Troutman brings to life the 
+                struggles and triumphs of coal miners during one of America's most challenging periods.
+              </p>
             </div>
           </div>
+        </section>
 
-          {/* Author Bio and Details */}
-          <div className="md:col-span-2 space-y-6">
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">Biography</h2>
-              <div className="prose prose-lg text-gray-700 space-y-4">
-                <p>
-                  Mitch Troutman is a writer, educator, and organizer. Born and raised in the 
-                  Pennsylvania coal region, his work focuses on labor history and environmental 
-                  justice in the area.
-                </p>
-                <p>
-                  As a founding member of the Anthracite Unite community organization, Troutman 
-                  has been actively involved in preserving and sharing the rich history of the 
-                  coal mining communities. His research and writing bring to light the 
-                  often-overlooked stories of resistance and resilience in the face of 
-                  corporate power.
-                </p>
-                <p>
-                  Through his work on "Bootleg Coal and the Law," Troutman uncovers how 
-                  unemployed miners during the Great Depression created their own system of 
-                  law and order, challenging corporate property rights while providing for 
-                  their families and communities.
-                </p>
-              </div>
-            </section>
-
-            <section className="bg-white p-6 rounded-lg shadow-md">
-              <h2 className="text-2xl font-semibold mb-4">Speaking & Events</h2>
+        {/* Publications Section */}
+        <section>
+          <h2 className="text-3xl font-bold mb-6">Publications</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-3">
+                The Bootleg Coal Rebellion
+              </h3>
               <p className="text-gray-700 mb-4">
-                Mitch is available for speaking engagements, book readings, and discussions 
-                about labor history, environmental justice, and the Pennsylvania coal region.
+                A comprehensive look at how unemployed miners in Pennsylvania created their own system 
+                of law and order during the Great Depression.
               </p>
-              <a
-                href="/contact"
-                className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-              >
-                Book an Event
-              </a>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">Publications</h2>
-              <ul className="space-y-4 text-gray-700">
-                <li>
-                  <strong className="block">Bootleg Coal and the Law</strong>
-                  <span className="text-sm">Cornell University Press, 2023</span>
-                </li>
-                <li>
-                  <strong className="block">Articles & Essays</strong>
-                  <ul className="list-disc list-inside ml-4 space-y-2">
-                    <li>Various contributions to labor history publications</li>
-                    <li>Commentary on environmental justice in coal communities</li>
-                  </ul>
-                </li>
-              </ul>
-            </section>
+              <p className="text-gray-600">Published by Cornell University Press, 2023</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-3">
+                Articles and Essays
+              </h3>
+              <p className="text-gray-700">
+                Regular contributions to academic journals and labor publications, focusing on the 
+                intersection of labor rights, environmental justice, and community organizing.
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
+
+        {/* Speaking and Events */}
+        <section>
+          <h2 className="text-3xl font-bold mb-6">Speaking and Events</h2>
+          <p className="text-lg text-gray-700 mb-6">
+            Mitch Troutman is available for speaking engagements, book discussions, and academic 
+            presentations. He regularly speaks about:
+          </p>
+          <ul className="list-disc list-inside space-y-3 text-gray-700">
+            <li>Labor History in Pennsylvania's Coal Region</li>
+            <li>Community Organizing and Social Movements</li>
+            <li>Environmental Justice in Mining Communities</li>
+            <li>Research Methods in Labor History</li>
+          </ul>
+        </section>
+
+        {/* Contact Section */}
+        <section className="bg-gray-50 p-8 rounded-lg">
+          <h2 className="text-3xl font-bold mb-6">Contact</h2>
+          <p className="text-lg text-gray-700 mb-6">
+            For speaking engagements, interviews, or other inquiries, please reach out through:
+          </p>
+          <div className="space-y-4">
+            <a
+              href="mailto:contact@mitchtroutman.com"
+              className="block text-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+            >
+              Email Mitch Troutman
+            </a>
+          </div>
+        </section>
       </div>
-    </main>
+    </PageLayout>
   );
 }
